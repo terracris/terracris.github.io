@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Cristobal's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Cristobal's Portfolio</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="active">
+          <a href="rbe2002.html">Unified Robotics IV: Navigation</a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+              class="label">Linkedin</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Featured Post -->
+      <article class="post featured">
+        <header class="major">
+          <span class="date">Oct, 2023</span>
+          <h2>Navigation</h2>
+        </header>
+        <h3 style="text-align: left">Description</h3>
+        <img style="max-height: 50%;" src="rbe3002/final/images/image3.png" />
+        <p>
+          The primary objective for this project was to develop software necessary for a Turtlebot to map, localize, and
+          navigate
+          an unknown maze autonomously. Specifically, the Turtlebot had to be able to perform the following:
+
+          <ol>
+            <li>Localize itself in the maze.</li>
+            <li>Traverse the maze while avoiding obstacles.</li>
+            <li>Identify frontiers of exploration to navigate to explore and map the entire maze.</li>
+            <li>Navigate back to any point in the map.</li>
+          </ol>
+
+          <p>
+            These goals were divided into three phases. Phase 1 involved exploring and mapping the unknown maze, Phase 2
+            involved
+            navigating back to any point throughout the maze, and Phase 3 involved the robot localizing itself after
+            being
+            “kidnapped” to any given point in the maze.
+            To accomplish this, we combined and adapted key functionality developed in previous labs, such as A*
+            pathfinding, C-Space calculation, and drive control. We combined these features into a single project, and
+            then we integrated new functionality, such as frontier detection, mapping, and localization. Each of these
+            functionalities proved necessary for the goals of the project.
+          </p>
+
+        </p>
+
+        <h3 style="text-align: left">Execution</h3>
+
+        <img class="image fit" src="rbe3002/lab3/images/image1.png" />
+        <img class="image fit" src="rbe3002/lab3/images/image2.png" />
+
+        <p>We used ROS to implement key functionality with the goal of allowing our Turtlebot to efficiently navigate
+          from any point on a given map to any other. We implemented C-Space calculation to determine the areas the
+          robot can traverse, A* pathfinding to allow the robot to find and follow the optimal path through this space
+          between any two points, and trajectory optimization to simplify the path produced. The effectiveness of this
+          functionality is crucial, as it will serve as a base for more complex functionality later on in the project.
+        </p>
+        <img class="image fit" src="rbe3002/lab3/images/image3.png" />
+        <img class="image fit" src="rbe3002/lab3/images/image4.png" />
+        <p>Above you'll see our A* wavefront and path generation optimized to minimized extraneous movements.</p>
+        <img class="image fit" src="rbe3002/final/images/image6.png" />
+
+        <p>
+          The solution implemented for the final demonstration of this project makes good use of the ROS system
+          for node-based computation. That is, we had multiple nodes running in parallel communicating through
+          various topics. Originally, our architecture was comprised of three nodes: map_explorer, drive_controller,
+          and path_planner. Based on feedback from our preliminary design review (PDR) and issues with computation
+          speed,
+          the map_explorer node was reduced in functionality. Its displaced tasks were sorted into the new map_manager
+          node
+          and preexisting path_planner and drive_controller nodes. Figure 1 visualizes the functionality division:
+        </p>
+        <img src="rbe3002/final/images/image8.png" />
+
+        <p>The map_explorer node is the high-level control node that coordinates the current objective of the robot and
+          the necessary actions to achieve it. Using ROS services and subscriptions, it gathers
+          information about the map, like the frontiers and their reachability, and commands the drive_controller
+          accordingly. See Results for detail on frontier processing. Generally, it attempts to direct the robot to the
+          closest frontier to the one previously explored. This results in behavior where the robot can effectively
+          fully explore each area it encounters. It approximates frontier tracking, where the frontier is treated as a
+          moving line instead of separate entities in discrete time steps. Its control flow chart is shown in Figure 2:
+        </p>
+
+        <img src="rbe3002/final/images/image7.png" />
+
+        <h3 style="text-align: left">What did I learn?</h3>
+        <p>Probabilistic robotics is a cool field! In the field of probabilistic robotics, I gained knowledge about
+          Bayesian filters like Kalman and particle filters for
+          integrating sensor information and updating robot beliefs. I learned techniques for LiDAR-based mapping,
+          including the
+          use of occupancy grids to represent obstacle likelihood. Localization algorithms were implemented to estimate
+          the
+          robot's pose in a map, addressing uncertainties in motion and sensor data. We used the A* algorithm for
+          path
+          planning, emphasizing bias application to avoid C-space and obstacles. Additionally, I studied Simultaneous
+          Localization
+          and Mapping (SLAM), motion planning, and the significance of transformation frames using ROS. We explored
+          Real-world challenges in
+          probabilistic robotics guiding design considerations in practical applications.</p>
+
+      </article>
+
+      <!-- Footer -->
+      <footer>
+        <div class="pagination">
+          <!--<a href="#" class="previous">Prev</a>-->
+          <a href="#" class="page active">1</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:chrisrincon23@gmail.com">chrisrincon23@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+                  class="label">Linkedin</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Cristobal</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

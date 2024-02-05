@@ -5,235 +5,242 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <title>Cristobal's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-      <!-- Header -->
-      <header id="header">
-        <a href="index.html" class="logo">Cristobal's Portfolio</a>
-      </header>
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li><a href="index.html">About Me</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li class="active">
-            <a href="rbe2001.html">Unified Robotics I: Actuation</a>
-          </li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/cristobalrincon/"
-              class="icon brands fa-linkedin"
-              ><span class="label">Linkedin</span></a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/terracris" class="icon brands fa-github"
-              ><span class="label">GitHub</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+<head>
+  <title>Cristobal's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Featured Post -->
-        <article class="post featured">
-          <header class="major">
-            <span class="date">January, 2022</span>
-            <h2>Unified Robotics I: Actuation</h2>
-          </header>
-          <h3 style="text-align: left">Description</h3>
-          <p>
-            The final project task is to simulate robots tasked with replacement
-            of solar collector panels on planet with two suns. There will be two
-            types of solar collectors mounted at two different angles (see image
-            below). On each side of the solar farm roof there will be an old
-            solar panel. Teams will be required to have at least two different
-            robots with different fourbar designs, one with a regular
-            servo-actuated gripper, and one with a continuous rotation
-            servo-actuated gripper. <br />
-            <br />
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Cristobal's Portfolio</a>
+    </header>
 
-            The first robot will need to autonomously remove an old panel and
-            place it on the staging block. The old panel will be replaced with a
-            new panel, which the robot will pick up and place it on the empty
-            spot on the roof. The first robot will then need to move to the
-            other side of the field and start line following as if to pick up
-            the old panel from the other side of the roof. The team will pause
-            the first robot with the IR remote and replace it with the second
-            robot in the same position. The second robot will proceed to remove
-            the old panel and replace it with a new panel.
-          </p>
-          <img class="image main" src="rbe2001/2001_arena.JPG" alt="" />
-          <p style="text-align: center">Arena in simulated environment</p>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="active">
+          <a href="rbe2001.html">Unified Robotics I: Actuation</a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+              class="label">Linkedin</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
 
-          <h3 style="text-align: left">Execution</h3>
-          <p>
-            In our robotics project, we utilized a differential drive robot, 
-			specifically the Pololu Romi, and were tasked with the development 
-			of two four-bar linkages and grippers. Let's delve into the process 
-			of synthesizing a four-bar linkage for a gripper.
-          </p>
+    <!-- Main -->
+    <div id="main">
+      <!-- Featured Post -->
+      <article class="post featured">
+        <header class="major">
+          <span class="date">January, 2022</span>
+          <h2>Actuation</h2>
+        </header>
+        <h3 style="text-align: left">Description</h3>
+        <p>
+          The final project task is to simulate robots tasked with replacement
+          of solar collector panels on planet with two suns. There will be two
+          types of solar collectors mounted at two different angles (see image
+          below). On each side of the solar farm roof there will be an old
+          solar panel. Teams will be required to have at least two different
+          robots with different fourbar designs, one with a regular
+          servo-actuated gripper, and one with a continuous rotation
+          servo-actuated gripper. <br />
+          <br />
 
-          <h4>Four-bar Synthesis</h4>
-          <img src="rbe2001/gripper_synthesis_pt1.JPG" alt="" />
-          <p>
-            We commenced our four-bar synthesis by taking inspiration from an initial 
-			gripper design. The first step involved identifying three crucial points of 
-			contact essential for effectively grasping a "solar panel" or plate. Notably, 
-			the attachment points on the right-hand side of the gripper served as the connection points 
-			between the gripper and the four-bar mechanism. Additionally, we considered a 
-			fixed point on the gripper, where the "solar panel" would come into contact, as 
-			a universal point in our four-bar analysis. This universal point remained consistent 
-			regardless of the gripper's orientation, leading us to disregard the dynamic bottom jaw 
-			whose position wasn't absolute.
-          </p>
-          <img src="rbe2001/gripper_synthesis_pt2.JPG" />
-          <p>
-            Illustrated below are three desired positions for our gripper or coupler. 
-			Ensuring that our gripper achieves these positions necessitates the use of 
-			Three-Position Synthesis to design our four-bar linkage.
-          </p>
-          
-		  <p>
-            Now, let me guide you through the synthesis process for a four-bar linkage with three desired coupler positions using a simplified diagram.
+          The first robot will need to autonomously remove an old panel and
+          place it on the staging block. The old panel will be replaced with a
+          new panel, which the robot will pick up and place it on the empty
+          spot on the roof. The first robot will then need to move to the
+          other side of the field and start line following as if to pick up
+          the old panel from the other side of the roof. The team will pause
+          the first robot with the IR remote and replace it with the second
+          robot in the same position. The second robot will proceed to remove
+          the old panel and replace it with a new panel.
+        </p>
+        <img class="image main" src="rbe2001/2001_arena.JPG" alt="" />
+        <p style="text-align: center">Arena in simulated environment</p>
 
-			<ol>
-				<li><p>Begin by drawing displacement vectors between points A1 and A2, A2 and A3, B1 and B2, and B2 and B3.</p></li>
-				<li><p>Identify the midpoint of each displacement vector: A1A2, A2A3, B1B2, and B2B3.</p></li>
-				<li><p>Draw perpendicular bisectors for each midpoint. The first ground joint, referred to as O2, is located at the intersection of the A1A2 and A1A3 bisector. Similarly, the second ground joint, referred to as O4, is located at the intersection of the B1B2 and B2B3 bisector.</p></li>
-				<li><p>Connect O2 to A1 and O4 to B1 with links.</p></li>
-				<li><p>Once all links are drawn, the synthesis of the four-bar mechanism is complete.</p></li>
-			</ol>
+        <h3 style="text-align: left">Execution</h3>
+        <p>
+          In our robotics project, we utilized a differential drive robot,
+          specifically the Pololu Romi, and were tasked with the development
+          of two four-bar linkages and grippers. Let's delve into the process
+          of synthesizing a four-bar linkage for a gripper.
+        </p>
 
-          </p>
-          <img class="image fit" src="rbe2001/gripper_synthesis_pt4.JPG" />
+        <h4>Four-bar Synthesis</h4>
+        <img src="rbe2001/gripper_synthesis_pt1.JPG" alt="" />
+        <p>
+          We commenced our four-bar synthesis by taking inspiration from an initial
+          gripper design. The first step involved identifying three crucial points of
+          contact essential for effectively grasping a "solar panel" or plate. Notably,
+          the attachment points on the right-hand side of the gripper served as the connection points
+          between the gripper and the four-bar mechanism. Additionally, we considered a
+          fixed point on the gripper, where the "solar panel" would come into contact, as
+          a universal point in our four-bar analysis. This universal point remained consistent
+          regardless of the gripper's orientation, leading us to disregard the dynamic bottom jaw
+          whose position wasn't absolute.
+        </p>
+        <img src="rbe2001/gripper_synthesis_pt2.JPG" />
+        <p>
+          Illustrated below are three desired positions for our gripper or coupler.
+          Ensuring that our gripper achieves these positions necessitates the use of
+          Three-Position Synthesis to design our four-bar linkage.
+        </p>
 
-		  <p>The image below is what our diagram looked like. The lower green circle represents A1, whereas the green one above represents B1. The magenta lines 
-			represent the perpendicular bisectors for distance vectors A1A2 and A2A3. The blue lines represent the perpendicular bisectors for distance vectors B1B2 Additionally B2B3. 
-			The red circles represent the ground joints found. The red lines symbolize the links connecting the ground joints to A1 and B1. From this sketch, we found the required link lengths
-			for our four bar mechanism.
-		  </p>
-		   <img src="rbe2001/gripper_synthesis_pt3.JPG" />
-       <h3 style="text-align: left;">Result</h3>
-       <img class="image fit" src="rbe2001/duncan.png"/>
-       <img class="image fit" src="rbe2001/exploded_view.png"/>
+        <p>
+          Now, let me guide you through the synthesis process for a four-bar linkage with three desired coupler
+          positions using a simplified diagram.
 
-       <p>Behold! This is our robot Duncan (named after Dunkin Donuts)</p>
-       <p>Our robot features a two-stage transmission system</p>
+          <ol>
+            <li>
+              <p>Begin by drawing displacement vectors between points A1 and A2, A2 and A3, B1 and B2, and B2 and B3.
+              </p>
+            </li>
+            <li>
+              <p>Identify the midpoint of each displacement vector: A1A2, A2A3, B1B2, and B2B3.</p>
+            </li>
+            <li>
+              <p>Draw perpendicular bisectors for each midpoint. The first ground joint, referred to as O2, is located
+                at the intersection of the A1A2 and A1A3 bisector. Similarly, the second ground joint, referred to as
+                O4, is located at the intersection of the B1B2 and B2B3 bisector.</p>
+            </li>
+            <li>
+              <p>Connect O2 to A1 and O4 to B1 with links.</p>
+            </li>
+            <li>
+              <p>Once all links are drawn, the synthesis of the four-bar mechanism is complete.</p>
+            </li>
+          </ol>
 
-       <h3 style="text-align: left;">Autonomous Control</h3>
-       <img class="image fit" src="rbe2001/Sensors.png">
+        </p>
+        <img class="image fit" src="rbe2001/gripper_synthesis_pt4.JPG" />
 
-      <p>Our robot autonomously navigated the field using various sensors. We used the following:
-        <ol style="text-align: left;">
-          <li>Ultrasonic Sensors</li>
-          <li>Reflactance Sensors</li>
-          <li>Magnetic Encoders</li>
-          <li>Infrared Receiver</li>
-        </ol>
-      </p>
+        <p>The image below is what our diagram looked like. The lower green circle represents A1, whereas the green one
+          above represents B1. The magenta lines
+          represent the perpendicular bisectors for distance vectors A1A2 and A2A3. The blue lines represent the
+          perpendicular bisectors for distance vectors B1B2 Additionally B2B3.
+          The red circles represent the ground joints found. The red lines symbolize the links connecting the ground
+          joints to A1 and B1. From this sketch, we found the required link lengths
+          for our four bar mechanism.
+        </p>
+        <img src="rbe2001/gripper_synthesis_pt3.JPG" />
+        <h3 style="text-align: left;">Result</h3>
+        <img class="image fit" src="rbe2001/duncan.png" />
+        <img class="image fit" src="rbe2001/exploded_view.png" />
 
-      <p>Our Reflactance sensors were used for line following whereas our ultrasonic sensors were used to ensure we were at the optimum distance
-        from the structures to collect the solar panels and validate our positioning.</p>
+        <p>Behold! This is our robot Duncan (named after Dunkin Donuts)</p>
+        <p>Our robot features a two-stage transmission system</p>
 
-      <h3 style="text-align: left;"> What did I learn?</h3>
-      <p>In this project, I developed my skills in mechanical design. I learned about how to synthesize a four bar mechanism for applications that require 
-        control of several positions within one degree of freedom. 
+        <h3 style="text-align: left;">Autonomous Control</h3>
+        <img class="image fit" src="rbe2001/Sensors.png">
 
-        I learned about toggle points, transmission angles, and mechanical advantage to improve my designs. 
+        <p>Our robot autonomously navigated the field using various sensors. We used the following:
+          <ol style="text-align: left;">
+            <li>Ultrasonic Sensors</li>
+            <li>Reflactance Sensors</li>
+            <li>Magnetic Encoders</li>
+            <li>Infrared Receiver</li>
+          </ol>
+        </p>
 
-        Most importantly, I learned about the limitations of 3d printed materials to widstand stress and levergage the properties of 3d printed materials
-        to maximize their strength while minimizing its weight. 
+        <p>Our Reflactance sensors were used for line following whereas our ultrasonic sensors were used to ensure we
+          were at the optimum distance
+          from the structures to collect the solar panels and validate our positioning.</p>
 
-        Lastly, I learned about the significance of center of mass. The center of mass our four bar attachment, was infront of the center of mass of our robot. 
-        This resulted in wheel slipping increasing the error in our odometry, tipping if a counterweight was not added, and increased the power requirements of our motors
-        for locomotion. If my team and I had more time, we would design our components to ensure that the center of mass remains as close to the center as possible. 
+        <h3 style="text-align: left;"> What did I learn?</h3>
+        <p>In this project, I developed my skills in mechanical design. I learned about how to synthesize a four bar
+          mechanism for applications that require
+          control of several positions within one degree of freedom.
 
-        I learned about state machines and timer interrupts to infrared sensors to disrupt the execution of code and jump to a different state in the state machine. 
+          I learned about toggle points, transmission angles, and mechanical advantage to improve my designs.
 
-        For view the final presentation containing videos, click on the <a href="https://docs.google.com/presentation/d/1LwiO8UVGCrIsHyBTxljtBUlLGOBnXLKu9kWVNR01uIs/edit?usp=sharing">link.</a>
-      </p>
+          Most importantly, I learned about the limitations of 3d printed materials to widstand stress and levergage the
+          properties of 3d printed materials
+          to maximize their strength while minimizing its weight.
 
+          Lastly, I learned about the significance of center of mass. The center of mass our four bar attachment, was
+          infront of the center of mass of our robot.
+          This resulted in wheel slipping increasing the error in our odometry, tipping if a counterweight was not
+          added, and increased the power requirements of our motors
+          for locomotion. If my team and I had more time, we would design our components to ensure that the center of
+          mass remains as close to the center as possible.
 
+          I learned about state machines and timer interrupts to infrared sensors to disrupt the execution of code and
+          jump to a different state in the state machine.
+
+          For view the final presentation containing videos, click on the <a
+            href="https://docs.google.com/presentation/d/1LwiO8UVGCrIsHyBTxljtBUlLGOBnXLKu9kWVNR01uIs/edit?usp=sharing">link.</a>
+        </p>
 
       </article>
 
-        <!-- Footer -->
-        <footer>
-          <div class="pagination">
-            <!--<a href="#" class="previous">Prev</a>-->
-            <a href="#" class="page active">1</a>
-            <a href="#" class="page">2</a>
-          </div>
-        </footer>
-      </div>
-
       <!-- Footer -->
-      <footer id="footer">
-        <section class="split contact">
-          <section>
-            <h3>Email</h3>
-            <p>
-              <a href="mailto:chrisrincon23@gmail.com"
-                >chrisrincon23@gmail.com</a
-              >
-            </p>
-          </section>
-          <section>
-            <h3>Social</h3>
-            <ul class="icons alt">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/cristobalrincon/"
-                  class="icon brands fa-linkedin"
-                  ><span class="label">Linkedin</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/terracris"
-                  class="icon brands fa-github"
-                  ><span class="label">GitHub</span></a
-                >
-              </li>
-            </ul>
-          </section>
-        </section>
+      <footer>
+        <div class="pagination">
+          <!--<a href="#" class="previous">Prev</a>-->
+          <a href="#" class="page active">1</a>
+        </div>
       </footer>
-
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; Cristobal</li>
-          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    <!-- Footer -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:chrisrincon23@gmail.com">chrisrincon23@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+                  class="label">Linkedin</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Cristobal</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Cristobal's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Cristobal's Portfolio</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="active">
+          <a href="rbe2002.html">Unified Robotics IV: Navigation</a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+              class="label">Linkedin</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Featured Post -->
+      <article class="post featured">
+        <header class="major">
+          <span class="date">Oct, 2023</span>
+          <h2>Embedded Systems Programming</h2>
+        </header>
+        <h3 style="text-align: left">Description</h3>
+        <img class="image fit" src="ece2049/board.png" />
+        <p>Embedded Systems Board with MSP430F5529 Microcontroller.</p>
+
+        <h3 style="text-align: left">Execution</h3>
+        <p>Using the MSP430 Microcontroller, I implemented several programs.</p>
+        <h4>Space Invaders</h4>
+        <img class="image fit" src="ece2049/space_invaders.png" />
+        <p>Created in the late 1970's, one of the earliest and most popular video arcade games
+          was Space Invaders. The objective of Space Invaders was simple, shoot the descending
+          aliens before they land (or they shoot you). The original game displayed rows of aliens
+          who “fell” down the screen unless the player shot them. As soon as the player cleared
+          all the threatening aliens, more would appear, and these ones would be descended
+          even more quickly!
+
+          In this implementation of a Space
+          Invaders-like game, I use numbers to represent aliens where 1 to 5 “alien” icons appear across the top of the
+          screen. The
+          player “shoots” the alien by pressing the correspondingly numbered key on the
+          keypad. If the player does not shoot the alien promptly the alien moves down the
+          screen. After a player defeats the invasion (wins the level), more aliens appear at the
+          top and fall more quickly. The game is lost when an alien lands on the bottom of the
+          screen. The game should flash the LEDs, sound the buzzer and write a message to the
+          screen when the player loses.</p>
+        <h4>Guitar Hero</h4>
+        <p>The Guitar Hero series of music video games are very popular and a lot of fun. They are also,
+          like many popular games, “conceptually simple”. The game plays a familiar rock song while flashing
+          lights indicating the notes that the player should press on their peripheral I/O device (i.e., plastic
+          guitar!). In this project I used the MSP430 to implement a simple version of this game,
+          MSP430 Hero. My game played a tune using a buzzer and flashed the 4 multi-colored LEDs with
+          the notes. The player will play by entering the notes flashed using the buttons. If the player can't
+          keep up, then they lose the game. This project was very fun and challenging. It included gaining
+          further experience with digital I/O, understanding the operation of the MSP430's timers and
+          gaining experience writing software which depends critically on the passage of time. Checkout <a
+            href="https://drive.google.com/file/d/1ToEJl6Nnu_h3n0Ude2Nl2OTd5DfimB6m/view?usp=sharing">this</a> video of
+          one of my friends testing out the system. Check out <a
+            href="https://drive.google.com/file/d/1OwUqRYRQrOwqwsxFIz4wTlxr1MmINLZW/view?usp=sharing">this</a> other
+          video to see detection of failure.</p>
+        <h4>Time and Temperature Display</h4>
+        <p>In this project I used the MSP430 and several of its peripherals to
+          implement a system that measures temperature using ADC12's internal temperature
+          sensor once per second (measured with Timer A2) and displays time along with the
+          temperature to the LCD. The main purpose of the project is to gain some
+          experience using MSP430's analog-to-digital converter.
+
+          Digital time and temperature displays are common sight. First I implemented a UTC style clock with one second
+          resolution. The temperature sensor
+          which used is the MSP430's internal temperature sensor which is connected
+          to ADC12_A analog input channel 10 (ADC12INCH_10). I also implemented the Scroll Wheel and use it to modify
+          the date and time settings.</p>
+        <h4>Simple function generator</h4>
+        <p>In this project I gained further experience with SPI by using the MSP430 and
+          the MCP4921 DAC to create a simple function generator. Specifically, my function
+          generator was capable of generating different DC values as well as a square wave,
+          a sawtooth wave, and a triangle wave.</p>
+        <h3 style="text-align: left">What did I learn?</h3>
+        <p>Overall, in completing these projects I gained hands-on experience in programming
+          microcontrollers,
+          working with various peripherals, implementing game logic, managing real-time aspects, and interfacing with
+          external
+          devices. Additionally, I developed skills in analog-to-digital conversion, SPI communication,
+          and overall
+          embedded system design. I enjoyed all of these projects and learned more about reading datasheets, making
+          sense
+          of everything I was reading, and implementing it in C. To checkout my code, go to my <a href="https://github.com/terracris/emdedded">GitHub.</a></p>
+      </article>
+
+      <!-- Footer -->
+      <footer>
+        <div class="pagination">
+          <!--<a href="#" class="previous">Prev</a>-->
+          <a href="#" class="page active">1</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:chrisrincon23@gmail.com">chrisrincon23@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+                  class="label">Linkedin</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Cristobal</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

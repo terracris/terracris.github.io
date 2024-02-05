@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Cristobal's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Cristobal's Portfolio</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">About Me</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li class="active">
+            <a href="rbe2002.html">Unified Robotics II: Sensing</a>
+          </li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/cristobalrincon/"
+              class="icon brands fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/terracris" class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Featured Post -->
+        <article class="post featured">
+          <header class="major">
+            <span class="date">March, 2022</span>
+            <h2>Sensing and Mapping</h2>
+          </header>
+          <h3 style="text-align: left">Description</h3>
+          <img class="image main" src="rbe2002/arena.png" alt="" />
+          <p>
+
+Our project revolved around the challenging task of mapping the environment within a robot arena. The objective set for my team and me was to program a robot capable of mapping two distinct environments. This undertaking demanded intricate maneuvers, where the robot had to navigate along a wall, effectively combine data from various sensors, including distance sensors and a camera, map these inputs to the robot's position, and seamlessly transmit the generated map wirelessly to a computer using an ESP32 board.
+Equipped with a sonar sensor, infrared sensor, and a camera, we embarked on the programming journey. Our mission was not only to integrate these diverse sensors but also to orchestrate a symphony of data, ensuring precise mapping and accurate representation of the robot's surroundings.
+
+This multifaceted project challenged us to leverage our programming skills to synchronize sensor data, maneuver the robot strategically, and establish a seamless communication channel with the computer. The integration of an ESP32 board for wireless data transmission added an extra layer of complexity, pushing us to optimize our code for efficient real-time mapping.
+In summary, our collaborative efforts encompassed not only the programming intricacies involved in sensor fusion and mapping but also the practical implementation of the provided sonar sensor, infrared sensor, and camera. As we navigated the robot through the arena, our focus remained on achieving a cohesive and accurate representation of the environments, reflecting the true essence of this challenging yet rewarding project.
+          </p>
+          
+
+          <h3 style="text-align: left">Execution</h3>
+
+          <img class="image fit" src="rbe2002/tech.png" alt="" />
+          <p></p>
+          <img class="image fit" src="rbe2002/control.png" />
+          <img src="rbe2002/" alt="" />
+          
+          <p>
+            Enhancing the flow and structure of the provided text:
+
+Our project initiation involved a deep dive into developing velocity kinematics, a crucial aspect that entails determining the necessary PWM signal, based on encoder counts and hardware specifications, to achieve a desired wheel speed. The foundation of our speed control rested on a PID controller, providing a robust mechanism for regulating the robot's motion.
+Utilizing a PID controller for velocity kinematics in a differential drive robot offers a balanced approach to control, incorporating proportional, integral, and derivative terms. This strategy ensures a prompt response to speed deviations, minimizes steady-state errors, and prevents overshooting.
+In addition, we calculated the odometry for the differential drive robot. Calculating odometry for the robot involves tracking incremental changes in wheel speeds over time, providing continuous updates on its position and aiding in navigation and mapping tasks. The combined use of PID control and odometry calculation enhances the robot's precision and control in motion.
+
+
+Transitioning from speed control, our focus shifted to wall following, a phase where we conducted experiments utilizing both an ultrasonic sensor and an infrared sensor. Through thorough testing, we observed that the ultrasonic sensor introduced more noise, necessitating additional filtering measures. In contrast, the infrared sensor exhibited lower noise levels, especially at closer distances, making it the preferred choice for wall following.
+
+However, the infrared sensor posed challenges related to changing light conditions, prompting us to implement calibration procedures and further filtering techniques to enhance its performance. Acknowledging the limitations of the infrared sensor at greater distances, we strategically incorporated an ultrasonic sensor with a conical coverage, minimizing bounced waves and narrowing our sensor space.
+
+To achieve sensor fusion, a critical element for improved localization and odometry, we harnessed the capabilities of the ultrasonic sensor. The control diagram below illustrates the integration of these sensors in our system.
+In addition, we used a camera as a sensor to scan April tags to locate itself on the arena. This fusion helped us ensure we knew our location. 
+
+As a final touch to our comprehensive sensor setup, we employed an additional infrared sensor facing the arena, facilitating mapping tasks. We implemented a data polling strategy, pausing periodically after a predetermined change in distance, and applied median filtering to augment the accuracy of our measurements.
+
+This systematic approach, spanning velocity kinematics, speed control, wall following, and sensor fusion, showcases the meticulous planning and iterative refinement we applied to achieve a robust and versatile robotic system. Our implementation followed
+the following state diagram.
+
+To learn more about the project, checkout my GitHub.          
+
+</p>
+
+<img src="rbe2002/RBE_2002_State_Diagram.drawio.png"/> 
+
+          
+  
+      <h3 style="text-align: left;"> What did I learn?</h3>
+      <p>
+        This project was an exciting learning experience for me! I gained insights into the intricate limitations of sensors and how environmental factors impact their performance. Furthermore, I acquired the skill of developing transfer functions between the input and output of sensors, especially when not provided with a data sheet.
+
+Delving into the realm of robotics, I expanded my knowledge by mastering both forward and inverse kinematics for a differential robot. The exploration didn't stop there – I also delved into device communication. I successfully implemented UART Serial communication, establishing a seamless connection between the camera and the board. As a final touch to my communication skills, I delved into the world of MQTT protocol, mastering the art of sending messages through an ESP32 with WiFi communication.
+
+Lastly, the project underscored the significance of mapping utilizing a myriad of sensors. This multifaceted learning journey not only broadened my understanding of robotics but also equipped me with practical skills across various aspects of sensor integration, communication protocols, and the critical importance of mapping in the field.
+      </p>
+
+      </article>
+
+        <!-- Footer -->
+        <footer>
+          <div class="pagination">
+            <!--<a href="#" class="previous">Prev</a>-->
+            <a href="#" class="page active">1</a>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:chrisrincon23@gmail.com"
+                >chrisrincon23@gmail.com</a
+              >
+            </p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/cristobalrincon/"
+                  class="icon brands fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/terracris"
+                  class="icon brands fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; Cristobal</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

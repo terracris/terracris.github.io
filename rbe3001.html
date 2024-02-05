@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Cristobal's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Cristobal's Portfolio</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="active">
+          <a href="rbe2002.html">Unified Robotics III: Manipulation</a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+              class="label">Linkedin</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Featured Post -->
+      <article class="post featured">
+        <header class="major">
+          <span class="date">March, 2022</span>
+          <h2>Manipulation</h2>
+        </header>
+        <h3 style="text-align: left">Description</h3>
+
+        <img class="image main" src="rbe3001/arm.png" />
+        <img src="rbe3001/tech.png" />
+
+        <p>This has by far been one of my favorite proejects. In this project, we set up the toolchain for the robot
+          arm,
+          worked with MATLAB for joint commands, applied Forward and Inverse Kinematics,
+          and implemented velocity kinematics for robot control. In the final project, we
+          integrate these concepts to create a robotic pick-and-place sorting system. This
+          involves using computer vision for target identification, localization, robot
+          movement, grabbing, and sorting. The project encourages a creative and thoughtful
+          approach, emphasizing deliberate planning, experimentation, and documentation of
+          the development and integration process.
+        </p>
+
+        <h3 style="text-align: left">Execution</h3>
+
+        <img class="image fit" src="rbe3001/lab1/images/image7.png">
+
+        <p>In this project, we used a serial manipulator that consists of three degrees of freedom (DoF)
+          controlled by three servo motors that rotate to control three rotational joins,
+          as seen in Figure 1. In addition, the serial robot arm has a small gripper servo
+          that allows the arm to grab objects. The gripper position, or end-effector position,
+          can be modified by adjusting the three servo motor positions at the joints with time interpolation enabled or
+          disabled.
+        </p>
+
+        <p>We began by finding the Forward using the DH-method for our robot arm.
+          The DH Method is listed as follows:
+          Based on the arm configuration shown in the hand drawn figure, we used the following steps of the D-H method
+          for deriving the forward kinematics for the robotic arm:
+
+          <br /><br />
+          Assign the local reference frame to each joint following a set of rules:
+          <br>
+
+          <ol>
+            <li>Assign the zi axes</li>
+            <li>Locate the origin oi</li>
+            <li>Assign the xi</li>
+            <li>Assign the right-handed coordinate frames</li>
+            <li>Determine the D-H parameters for each joint: θi, di, ai, ɑi</li>
+            <li>Form the homogeneous transformation matrices Ai</li>
+            <li>Form the forward kinematics transformation matrix T</li>
+          </ol>
+
+        </p>
+
+        <p>
+
+          The DH parameters are necessary to represent the transformation undergone from frame to frame. For instance,
+          the DH method states that by rotating by an angle θ, Translating along the z-axis by d units, translating
+          along the x-axis by a-units, and rotating along the x-axis by ɑ degrees, you can obtain the transformation
+          matrix for a frame i-1 to i. The transformation matrices are represented by the letter A.
+
+        </p>
+
+        <img class="image fit" src="rbe3001/lab5/images/image41.png" />
+
+        <img class="image fit" style="max-height: 10%;" src="rbe3001/lab5/images/image62.png" />
+
+        <p>
+          Therefore, to find the transformation matrices between frames we must find the DH parameters and evaluate them
+          using the A matrix. We will find three pairs of DH parameters since there are as many DH parameter sets as
+          there are joints. To find the parameters, we follow the rules of the DH parameters:
+        </p>
+        <img class="image fit" src="rbe3001/lab5/images/image48.png" />
+        <img class="image fit" src="rbe3001/lab5/images/dh_table.png" />
+
+        <p>Step 3: Find Transformation Matrices
+
+          Next, we found each transformation matrix between each joint frame.
+          Due to the size of the final transformation matrix Tn0 we will omit it.
+          However, as an exercise to the reader, multiply these matrices and use
+          matlab to verify your calculations. We used matlab and solved for the
+          final matrix symbolically. Then, we substituted for each joint variable and evaluated it. </p>
+
+        <img class="image fit" src="rbe3001/lab5/images/image56.png" />
+
+        <p>
+          Afterwards we calculated the inverse kinematics for our 3-DOF arm.
+        </p>
+
+        <img class="image fit" src="rbe3001/lab5/images/image63.png" />
+        <img class="image fit" src="rbe3001/lab5/images/image64.png" />
+
+        <p>Theta 1 was easy to calculate. Theta 1 is simply the angle made by the position of the end effector projected
+          on the x-y plane of the base joint.
+          However, the following angles required additional geometric calculations using the law of cosines.
+        </p>
+
+        <p>Lastly, we had to implement computer vision. To detect colored objects and segment them.
+          We then found the centroid of blobs from our segmented images and updated the locations of the colored
+          objects.
+        </p>
+
+        <img class="image fit" src="rbe3001/lab5/images/image38.png" />
+        <img class="image fit" src="rbe3001/lab5/images/image49.png" />
+        <img class="image fit" src="rbe3001/lab5/images/image36.png" />
+        <img class="image fit" src="rbe3001/lab5/images/image43.png" />
+
+        <p>Our image processing corrects for the distortion of the point in the checkerboard frame created by the
+          camera.
+          This correction is performed by calculating some offsets to undistort the balls centroid location in the world
+          frame.
+          We calculate the X and Y offset. The X offset is calculated by projecting the ball onto the XZ plane, as seen
+          in Figure
+          X above, and using similar triangles to determine where the ball actually lies on the X axis. We then project
+          the ball
+          onto the XY plane to determine y offsets. The figure, shows our hand calculations to derive these offsets.
+        </p>
+
+        <img class="image fit" src="rbe3001/lab5/images/image66.png" />
+
+        <h3 style="text-align: left;"> What did I learn?</h3>
+
+        <p>This project was by far one of the most rewarding projects I have ever worked on. I learned about Forward,
+          Inverse, and Velocity Kinematics,
+          Singularities, i.e configurations that have near infinite solutions making the robot stuck. In addition, I
+          learned computer vision techniques
+          to extract information from images and videos. This project proved to be a fun challenge. Lastly, I learned
+          more about working on a team and sharing
+          code using git and GitHub. My team had a great workflow and dynamic to create a fun working environment.
+          Checkout the code for this project <a href="https://github.com/terracris/Manipulators">here!</a>
+        </p>
+
+      </article>
+
+      <!-- Footer -->
+      <footer>
+        <div class="pagination">
+          <!--<a href="#" class="previous">Prev</a>-->
+          <a href="#" class="page active">1</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:chrisrincon23@gmail.com">chrisrincon23@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://www.linkedin.com/in/cristobalrincon/" class="icon brands fa-linkedin"><span
+                  class="label">Linkedin</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/terracris" class="icon brands fa-github"><span class="label">GitHub</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Cristobal</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
